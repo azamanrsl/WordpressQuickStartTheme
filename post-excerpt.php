@@ -1,13 +1,10 @@
 <?php
 /**
- * The template for displaying post excerpts. 
- *
- * @package WordPress
- * @subpackage bilanti
+ * The template for displaying post excerpts.
  */
 ?>
 
-<?php if(have_posts()) : ?>
+<?php if (have_posts()) : ?>
 <?php while (have_posts()) : the_post(); ?>		
 	<div class="single_post">
 		<a href="<?php the_permalink(); ?>"><h2><?php the_title(); ?></h2></a>
@@ -19,4 +16,8 @@
 <?php endwhile; ?>	
 <?php endif; ?>
 
-<?php if (function_exists('wp_pagenavi')) { wp_pagenavi(); } else { include('navigation.php'); } ?>
+<?php if (function_exists('wp_pagenavi')) {
+    wp_pagenavi();
+} else {
+    include 'navigation.php';
+} ?>
